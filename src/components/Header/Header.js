@@ -1,15 +1,32 @@
+import {Link} from 'react-router-dom';
 import './Header.css';
 
 function Header(props) {
     return(
         <header className="Header">
-            <h1>Sounds</h1>
+            <Link to="/">
+                <h1>Sounds</h1>
+            </Link>
+
             <nav>
                 <ul className="NavLinks">
-                    <li>Login</li>
-                    <li>Signup</li>
-                    <li>Logout</li>
-                    <li>Dashboard</li>
+                    {
+                        props.user ?
+                        <>
+                            <li><Link to='' onClick={props.handleLogout}>Logout</Link></li>
+                            <li><Link to='/dashboard'>Dashboard</Link></li>
+                        </>
+                        :
+                        <>
+                            <li><Link to='/signup'>Signup</Link></li>
+                            <li><Link to='/login'>Login</Link></li>
+                        </>
+
+                    }
+                    
+                    
+                    
+
                 </ul>
             </nav>
         </header>
