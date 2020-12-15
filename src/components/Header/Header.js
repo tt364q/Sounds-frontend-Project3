@@ -5,7 +5,7 @@ function Header(props) {
     return(
         <header className="Header">
             <Link to="/">
-                <h1>Sounds</h1>
+                <h1>Sound Broker</h1>
             </Link>
 
             <nav>
@@ -15,6 +15,7 @@ function Header(props) {
                         <>
                             <li><Link to='' onClick={props.handleLogout}>Logout</Link></li>
                             <li><Link to='/dashboard'>Dashboard</Link></li>
+                            
                         </>
                         :
                         <>

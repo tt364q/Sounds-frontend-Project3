@@ -1,11 +1,11 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService';
 
-const BASE_URL = 'http://localhost:3001/api/users';
+const BASE_URL = 'http://localhost:3001/api';
 
 
 
 function signup(user) {
-    return fetch(BASE_URL + '/signup', {
+    return fetch(BASE_URL + '/users/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'Application/json'
@@ -18,7 +18,7 @@ function signup(user) {
 }
 
 function login(credentials) {
-    return fetch(BASE_URL + '/login', {
+    return fetch(BASE_URL + '/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'Application/json'
@@ -38,10 +38,23 @@ function getUser() {
     return getUserFromToken();
 }
 
+function getSoundPacks(){
+    return fetch(BASE_URL + '/soundPacks', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'Application/json'
+        },
+    }).then(response => {
+        if(response.ok) return response.json();
+    });
+
+}
+
 
 export {
     signup,
     login,
     logout,
-    getUser
+    getUser,
+    getSoundPacks
 }
