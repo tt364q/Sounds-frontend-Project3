@@ -2,10 +2,9 @@ import './SoundPack.css';
 
 function SoundPack(props) {
     return(
-        <div>
+        <div className="inline">
             <h1>{props.data.title}</h1>
-            {/* <h2>{props.data.sound}</h2> */}
-            {/* <h3>{props.data.image}</h3> */}
+            <a target="_blank" href={props.data.soundUrl}>Click to Preview</a>
         </div>
     
     );

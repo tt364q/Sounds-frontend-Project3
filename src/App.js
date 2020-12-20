@@ -8,11 +8,17 @@ import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 
+// import CreateSong from "./components/CreateSong/CreateSong";
+// import EditSong from "./components/EditSong/EditSong";
+// import SongList from "./components/SongList/SongList";
+
+
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 
 import { getUser, logout } from './services/userService';
 
 import './App.css';
+import ProducerPage from './pages/ProducerPage';
 
 function App(props) {
   /* component state */
@@ -33,6 +39,10 @@ function App(props) {
     props.history.push('/');
   }
 
+  function submitProduction() {
+    
+  }
+
   return (
     <div className="App">
       <Header user={userState.user} handleLogout={handleLogout} />
@@ -51,6 +61,9 @@ function App(props) {
           } />
           <Route exact path="/login" render={ props => 
             <LoginPage handleSignupOrLogin={handleSignupOrLogin} />
+          } />
+          <Route exact path="/producer" render= { props =>
+            <ProducerPage submitProduction= {submitProduction} />
           } />
         </Switch>
       <Footer />
