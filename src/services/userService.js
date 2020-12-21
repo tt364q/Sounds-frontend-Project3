@@ -1,6 +1,6 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService';
 
-const BASE_URL = 'https://git.heroku.com/project3-sounds-backend.git';
+const BASE_URL = 'https://project3-sounds-backend.herokuapp.com/';
 
 
 
