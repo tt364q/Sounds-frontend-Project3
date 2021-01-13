@@ -12,9 +12,9 @@
 - AJAX
 - heroku
 
-## Heroku Deploy Link 
+## Nellify Deploy Link 
 
-https://project3-sounds-frontend.herokuapp.com/
+https://sounds-project3-frontend.netlify.app/
 
 ## Future Enhancements
 App will include breakdown of each sound and tutorial video on how to tutorial video
