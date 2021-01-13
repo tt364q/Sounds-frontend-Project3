@@ -21,7 +21,7 @@ export default function DashboardPage(props) {
     return (
         <>
         <main className="Sounds">
-        {packs.map(pack => 
+        {packs?.map(pack => 
         <SoundPack data={pack}/>)}
 
         </main>

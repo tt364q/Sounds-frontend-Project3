@@ -5,20 +5,21 @@ const BASE_URL = 'https://project3-sounds-backend.herokuapp.com/';
 
 
 function signup(user) {
-    return fetch(BASE_URL + '/users/signup', {
+    return fetch(BASE_URL + 'api/users/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'Application/json'
         },
         body: JSON.stringify(user)
     }).then(response => {
+        // return response.json();
         if(response.ok) return response.json();
         throw new Error('Email already taken');
     }).then(({ token }) => setToken(token));
 }
 
 function login(credentials) {
-    return fetch(BASE_URL + '/users/login', {
+    return fetch(BASE_URL + 'api/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'Application/json'
